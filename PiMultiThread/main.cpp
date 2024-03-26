@@ -1,15 +1,12 @@
 #include <iostream> 
 #include <thread> 
-#include <mutex> 
 #include <cstdint>
 #include <iomanip> 
 #include <cmath> 
 #include <future> 
-#include <exception> 
 #include <vector> 
 #include <chrono>
 
-using std::cin;
 using std::cout;
 using std::endl; 
 
@@ -17,7 +14,7 @@ const int CPUthread = std::thread::hardware_concurrency();
 
 long double piMaker(const long double& limit, int start, int skip) {
     if (limit <= 1E4) {
-        throw std::runtime_error("There limit input number is below 10000!");
+        throw std::runtime_error("The limit input number cannot be below 10000!");
     } else {
     long double sum{0}; 
     for(auto i = start; i < limit; i+=skip) {
